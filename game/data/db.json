@@ -1,0 +1,73 @@
+{
+    "_default":{
+        "1":{
+            "name":"testdatabase",
+            "version":0.1
+        }
+    },
+    "actions":{
+        "1":{
+            "i_name":"testaction",
+            "d_name":"The Test Action",
+            "class":"TestAction",
+            "descriptions":[
+                {
+                    "conditions":[],
+                    "description":"test description here"
+                }
+            ],
+            "kwargs":{}
+        }
+    },
+    "actors":{
+        "1":{
+            "actions":["testaction"],
+            "class":"Player",
+            "d_name":"Test Player",
+            "descriptions":[
+                {
+                    "conditions":[],
+                    "description":"test description here"
+                }
+            ],
+            "flags":[],
+            "i_name":"testactor",
+            "location":"testroom",
+            "stats":{}
+        },
+        "2":{
+            "d_name":"Giant Spider",
+            "i_name":"giantspider"
+        }
+    },
+    "items":{},
+    "rooms":{
+        "1":{
+            "d_name":"Test Room",
+            "descriptions":[
+                {
+                    "conditions":[],
+                    "description":"Test Description"
+                }
+            ],
+            "exits":[
+                {
+                    "d_name":" Test Exit",
+                    "descriptions":[
+                        {
+                            "conditions":[],
+                            "description":"Test Description"
+                        }
+                    ],
+                    "i_name":"testexit",
+                    "leads_to":{
+                        "id":1,
+                        "table":"rooms"
+                    },
+                    "usable":[]
+                }
+            ],
+            "i_name":"testroom"
+        }
+    }
+}

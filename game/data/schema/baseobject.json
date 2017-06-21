@@ -1,0 +1,29 @@
+{
+  "i_name":"internal name",
+  "d_name":"Display Name",
+  "descriptions":[
+    {"flags":[], "description": "A plain room with off-white walls. There is a single woodend door on the north wall"}
+  ],
+  "flags":[],
+  "exits":[
+    {
+      "i_name":"wood_door",
+      "d_name":"Wood Door",
+      "c_room":"otherroom",
+      "descriptions":[
+        {"flags":[],"description":"A simple wooden door"}
+      ],
+      "flags":[],
+      "conditions":{
+        "usable":[],
+        "visible":[]
+      },
+      "aliases":["door"]
+    }
+  ],
+  "actors":["playercharacter"],
+  "inventory":[],
+  "stats":{},
+  "actions":[],
+  "aliases":[]
+}
