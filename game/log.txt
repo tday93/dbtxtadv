@@ -1,0 +1,191 @@
+[32m[I 170622 12:23:25 main:18][m hello world
+[32m[I 170622 12:23:25 main:19][m Namespace(arg='boop', flag=False, name=None, verbose=1)
+[32m[I 170623 10:04:28 main:19][m hello world
+[32m[I 170623 10:04:28 main:20][m Namespace(flag=False, name=None, verbose=0)
+[32m[I 170623 10:07:16 main:19][m hello world
+[32m[I 170623 10:07:16 main:20][m Namespace(flag=False, name=None, verbose=0)
+[32m[I 170623 10:07:52 main:19][m hello world
+[32m[I 170623 10:07:52 main:20][m Namespace(flag=False, name=None, verbose=0)
+[32m[I 170623 10:09:14 main:19][m hello world
+[32m[I 170623 10:09:14 main:20][m Namespace(flag=False, name=None, verbose=0)
+[32m[I 170623 10:10:26 main:19][m hello world
+[32m[I 170623 10:10:26 main:20][m Namespace(flag=False, name=None, verbose=0)
+[32m[I 170623 10:12:03 main:19][m hello world
+[32m[I 170623 10:12:03 main:20][m Namespace(flag=False, name=None, verbose=0)
+[32m[I 170623 10:13:20 main:19][m hello world
+[32m[I 170623 10:13:20 main:20][m Namespace(flag=False, name=None, verbose=0)
+[32m[I 170623 10:13:37 main:19][m hello world
+[32m[I 170623 10:13:37 main:20][m Namespace(flag=False, name=None, verbose=0)
+[32m[I 170623 10:14:43 main:19][m hello world
+[32m[I 170623 10:14:43 main:20][m Namespace(flag=False, name=None, verbose=0)
+[32m[I 170623 10:15:16 main:19][m hello world
+[32m[I 170623 10:15:16 main:20][m Namespace(flag=False, name=None, verbose=0)
+[32m[I 170623 10:16:14 main:19][m hello world
+[32m[I 170623 10:16:14 main:20][m Namespace(flag=False, name=None, verbose=0)
+[32m[I 170623 10:18:46 main:19][m hello world
+[32m[I 170623 10:18:46 main:20][m Namespace(flag=False, name=None, verbose=0)
+[32m[I 170623 10:20:41 main:19][m hello world
+[32m[I 170623 10:20:41 main:20][m Namespace(flag=False, name=None, verbose=0)
+[32m[I 170623 10:22:44 main:19][m hello world
+[32m[I 170623 10:22:44 main:20][m Namespace(flag=False, name=None, verbose=0)
+[32m[I 170623 10:24:45 main:19][m hello world
+[32m[I 170623 10:24:45 main:20][m Namespace(flag=False, name=None, verbose=0)
+[32m[I 170623 10:31:03 main:19][m hello world
+[32m[I 170623 10:31:03 main:20][m Namespace(flag=False, name=None, verbose=0)
+[32m[I 170623 10:32:58 main:19][m hello world
+[32m[I 170623 10:32:58 main:20][m Namespace(flag=False, name=None, verbose=0)
+[32m[I 170623 10:55:44 main:19][m hello world
+[32m[I 170623 10:55:44 main:20][m Namespace(flag=False, name=None, verbose=0)
+[32m[I 170623 10:56:57 main:19][m hello world
+[32m[I 170623 10:56:57 main:20][m Namespace(flag=False, name=None, verbose=0)
+[32m[I 170623 11:16:51 main:19][m hello world
+[32m[I 170623 11:16:51 main:20][m Namespace(flag=False, name=None, verbose=0)
+[32m[I 170623 11:19:17 main:19][m hello world
+[32m[I 170623 11:19:17 main:20][m Namespace(flag=False, name=None, verbose=0)
+[32m[I 170623 11:20:15 main:19][m hello world
+[32m[I 170623 11:20:15 main:20][m Namespace(flag=False, name=None, verbose=0)
+[32m[I 170623 11:35:45 main:20][m hello world
+[32m[I 170623 11:35:45 main:21][m Namespace(flag=False, name=None, verbose=0)
+[32m[I 170623 11:36:02 main:20][m hello world
+[32m[I 170623 11:36:02 main:21][m Namespace(flag=False, name=None, verbose=0)
+[34m[D 170623 11:36:02 game:51][m obj = testroom type =BaseObject
+[34m[D 170623 11:36:02 game:51][m obj = testactor type =Player
+[34m[D 170623 11:36:02 game:51][m obj = giantspider type =Actor
+[32m[I 170623 11:37:19 main:20][m hello world
+[32m[I 170623 11:37:19 main:21][m Namespace(flag=False, name=None, verbose=0)
+[32m[I 170623 11:38:11 main:20][m hello world
+[32m[I 170623 11:38:11 main:21][m Namespace(flag=False, name=None, verbose=0)
+[34m[D 170623 11:38:11 game:51][m obj = testroom type =Room
+[34m[D 170623 11:38:11 game:51][m obj = testactor type =Player
+[34m[D 170623 11:38:11 game:51][m obj = giantspider type =Actor
+[32m[I 170623 11:43:51 main:20][m hello world
+[32m[I 170623 11:43:51 main:21][m Namespace(flag=False, name=None, verbose=0)
+[34m[D 170623 11:43:51 game:51][m obj = testroom type =Room
+[34m[D 170623 11:43:51 game:51][m obj = testactor type =Player
+[34m[D 170623 11:43:51 game:51][m obj = giantspider type =Actor
+[32m[I 170623 11:44:55 main:20][m hello world
+[32m[I 170623 11:44:55 main:21][m Namespace(flag=False, name=None, verbose=0)
+[34m[D 170623 11:44:55 game:51][m obj = testroom type =Room
+[34m[D 170623 11:44:55 game:51][m obj = testactor type =Player
+[34m[D 170623 11:44:55 game:51][m obj = giantspider type =Actor
+[32m[I 170627 11:39:25 main:20][m hello world
+[32m[I 170627 11:39:25 main:21][m Namespace(flag=False, name=None, verbose=0)
+[34m[D 170627 11:39:25 game:51][m obj = testroom type =Room
+[34m[D 170627 11:39:25 game:51][m obj = testactor type =Player
+[34m[D 170627 11:39:25 game:51][m obj = giantspider type =Actor
+[32m[I 170627 11:42:33 main:20][m hello world
+[32m[I 170627 11:42:33 main:21][m Namespace(flag=False, name=None, verbose=0)
+[34m[D 170627 11:42:33 game:51][m obj = testroom type =Room
+[34m[D 170627 11:42:33 game:51][m obj = secondroom type =Room
+[34m[D 170627 11:42:33 game:51][m obj = testactor type =Player
+[34m[D 170627 11:42:33 game:51][m obj = giantspider type =Actor
+[32m[I 170627 12:13:30 main:20][m hello world
+[32m[I 170627 12:13:30 main:21][m Namespace(flag=False, name=None, verbose=0)
+[34m[D 170627 12:13:30 game:51][m obj = testroom type =Room
+[34m[D 170627 12:13:30 game:51][m obj = secondroom type =Room
+[34m[D 170627 12:13:30 game:51][m obj = testactor type =Player
+[34m[D 170627 12:13:30 game:51][m obj = giantspider type =Actor
+[32m[I 170627 12:15:17 main:20][m hello world
+[32m[I 170627 12:15:17 main:21][m Namespace(flag=False, name=None, verbose=0)
+[34m[D 170627 12:15:17 game:51][m obj = testroom type =Room
+[34m[D 170627 12:15:17 game:51][m obj = secondroom type =Room
+[34m[D 170627 12:15:17 game:51][m obj = testactor type =Player
+[34m[D 170627 12:15:17 game:51][m obj = giantspider type =Actor
+[32m[I 170627 12:15:49 main:20][m hello world
+[32m[I 170627 12:15:49 main:21][m Namespace(flag=False, name=None, verbose=0)
+[34m[D 170627 12:15:49 game:51][m obj = testroom type =Room
+[34m[D 170627 12:15:49 game:51][m obj = secondroom type =Room
+[34m[D 170627 12:15:49 game:51][m obj = testactor type =Player
+[34m[D 170627 12:15:49 game:51][m obj = giantspider type =Actor
+[32m[I 170627 12:17:13 main:20][m hello world
+[32m[I 170627 12:17:13 main:21][m Namespace(flag=False, name=None, verbose=0)
+[34m[D 170627 12:17:13 game:51][m obj = testroom type =Room
+[34m[D 170627 12:17:13 game:51][m obj = secondroom type =Room
+[34m[D 170627 12:17:13 game:51][m obj = testactor type =Player
+[34m[D 170627 12:17:13 game:51][m obj = giantspider type =Actor
+[32m[I 170627 12:18:56 main:20][m hello world
+[32m[I 170627 12:18:56 main:21][m Namespace(flag=False, name=None, verbose=0)
+[34m[D 170627 12:18:56 game:51][m obj = testroom type =Room
+[34m[D 170627 12:18:56 game:51][m obj = secondroom type =Room
+[34m[D 170627 12:18:56 game:51][m obj = testactor type =Player
+[34m[D 170627 12:18:56 game:51][m obj = giantspider type =Actor
+[32m[I 170627 12:20:17 main:20][m hello world
+[32m[I 170627 12:20:17 main:21][m Namespace(flag=False, name=None, verbose=0)
+[34m[D 170627 12:20:17 game:51][m obj = testroom type =Room
+[34m[D 170627 12:20:17 game:51][m obj = secondroom type =Room
+[34m[D 170627 12:20:17 game:51][m obj = testactor type =Player
+[34m[D 170627 12:20:17 game:51][m obj = giantspider type =Actor
+[32m[I 170627 12:21:02 main:20][m hello world
+[32m[I 170627 12:21:02 main:21][m Namespace(flag=False, name=None, verbose=0)
+[34m[D 170627 12:21:02 game:51][m obj = testroom type =Room
+[34m[D 170627 12:21:02 game:51][m obj = secondroom type =Room
+[34m[D 170627 12:21:02 game:51][m obj = testactor type =Player
+[34m[D 170627 12:21:02 game:51][m obj = giantspider type =Actor
+[32m[I 170627 13:03:26 main:21][m hello world
+[32m[I 170627 13:03:26 main:22][m Namespace(flag=False, name=None, verbose=0)
+[32m[I 170627 13:03:50 main:21][m hello world
+[32m[I 170627 13:03:50 main:22][m Namespace(flag=False, name=None, verbose=0)
+[34m[D 170627 13:03:50 game:53][m obj = testroom type =Room
+[34m[D 170627 13:03:50 game:53][m obj = secondroom type =Room
+[34m[D 170627 13:03:50 game:53][m obj = testactor type =Player
+[34m[D 170627 13:03:50 game:53][m obj = giantspider type =Actor
+[32m[I 170627 13:04:25 main:21][m hello world
+[32m[I 170627 13:04:25 main:22][m Namespace(flag=False, name=None, verbose=0)
+[34m[D 170627 13:04:25 game:53][m obj = testroom type =Room
+[34m[D 170627 13:04:25 game:53][m obj = secondroom type =Room
+[34m[D 170627 13:04:25 game:53][m obj = testactor type =Player
+[34m[D 170627 13:04:25 game:53][m obj = giantspider type =Actor
+[32m[I 170627 13:05:10 main:21][m hello world
+[32m[I 170627 13:05:10 main:22][m Namespace(flag=False, name=None, verbose=0)
+[34m[D 170627 13:05:10 game:53][m obj = testroom type =Room
+[34m[D 170627 13:05:10 game:53][m obj = secondroom type =Room
+[34m[D 170627 13:05:10 game:53][m obj = testactor type =Player
+[34m[D 170627 13:05:10 game:53][m obj = giantspider type =Actor
+[32m[I 170627 13:06:05 main:21][m hello world
+[32m[I 170627 13:06:05 main:22][m Namespace(flag=False, name=None, verbose=0)
+[34m[D 170627 13:06:05 game:52][m obj = testroom type =Room
+[34m[D 170627 13:06:05 game:52][m obj = secondroom type =Room
+[34m[D 170627 13:06:05 game:52][m obj = testactor type =Player
+[34m[D 170627 13:06:05 game:52][m obj = giantspider type =Actor
+[32m[I 170627 13:17:13 main:21][m hello world
+[32m[I 170627 13:17:13 main:22][m Namespace(flag=False, name=None, verbose=0)
+[34m[D 170627 13:17:13 game:52][m obj = testroom type =Room
+[34m[D 170627 13:17:13 game:52][m obj = secondroom type =Room
+[34m[D 170627 13:17:13 game:52][m obj = testactor type =Player
+[34m[D 170627 13:17:13 game:52][m obj = giantspider type =Actor
+[32m[I 170628 13:13:19 main:21][m hello world
+[32m[I 170628 13:13:19 main:22][m Namespace(flag=False, name=None, verbose=0)
+[34m[D 170628 13:13:19 game:55][m obj = testroom type =Room
+[34m[D 170628 13:13:19 game:55][m obj = secondroom type =Room
+[34m[D 170628 13:13:19 game:55][m obj = testactor type =Player
+[34m[D 170628 13:13:19 game:55][m obj = giantspider type =Actor
+[32m[I 170628 13:13:54 main:21][m hello world
+[32m[I 170628 13:13:54 main:22][m Namespace(flag=False, name=None, verbose=0)
+[34m[D 170628 13:13:54 game:55][m obj = testroom type =Room
+[34m[D 170628 13:13:54 game:55][m obj = secondroom type =Room
+[34m[D 170628 13:13:54 game:55][m obj = testactor type =Player
+[34m[D 170628 13:13:54 game:55][m obj = giantspider type =Actor
+[32m[I 170628 13:14:34 main:21][m hello world
+[32m[I 170628 13:14:34 main:22][m Namespace(flag=False, name=None, verbose=0)
+[34m[D 170628 13:14:34 game:55][m obj = testroom type =Room
+[34m[D 170628 13:14:34 game:55][m obj = secondroom type =Room
+[34m[D 170628 13:14:34 game:55][m obj = testactor type =Player
+[34m[D 170628 13:14:34 game:55][m obj = giantspider type =Actor
+[32m[I 170628 13:14:49 main:21][m hello world
+[32m[I 170628 13:14:49 main:22][m Namespace(flag=False, name=None, verbose=0)
+[34m[D 170628 13:14:49 game:55][m obj = testroom type =Room
+[34m[D 170628 13:14:49 game:55][m obj = secondroom type =Room
+[34m[D 170628 13:14:49 game:55][m obj = testactor type =Player
+[34m[D 170628 13:14:49 game:55][m obj = giantspider type =Actor
+[32m[I 170628 13:18:14 main:21][m hello world
+[32m[I 170628 13:18:14 main:22][m Namespace(flag=False, name=None, verbose=0)
+[34m[D 170628 13:18:14 game:55][m obj = testroom type =Room
+[34m[D 170628 13:18:14 game:55][m obj = secondroom type =Room
+[34m[D 170628 13:18:14 game:55][m obj = testactor type =Player
+[34m[D 170628 13:18:14 game:55][m obj = giantspider type =Actor
+[32m[I 170628 13:18:53 main:21][m hello world
+[32m[I 170628 13:18:53 main:22][m Namespace(flag=False, name=None, verbose=0)
+[34m[D 170628 13:18:53 game:55][m obj = testroom type =Room
+[34m[D 170628 13:18:53 game:55][m obj = secondroom type =Room
+[34m[D 170628 13:18:53 game:55][m obj = testactor type =Player
+[34m[D 170628 13:18:53 game:55][m obj = giantspider type =Actor

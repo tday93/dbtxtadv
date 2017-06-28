@@ -7,37 +7,91 @@
     },
     "actions":{
         "1":{
-            "i_name":"testaction",
-            "d_name":"The Test Action",
+            "aliases":[],
             "class":"TestAction",
+            "d_name":"The Test Action",
             "descriptions":[
                 {
                     "conditions":[],
-                    "description":"test description here"
+                    "description":"The Test Action Description"
                 }
             ],
+            "i_name":"testaction",
+            "kwargs":{}
+        },
+        "2":{
+            "aliases":[],
+            "class":"Examine",
+            "d_name":"Examine",
+            "descriptions":[
+                {
+                    "conditions":[],
+                    "description":"Examine things in the world"
+                }
+            ],
+            "i_name":"examine",
+            "kwargs":{}
+        },
+        "3":{
+            "aliases":[],
+            "class":"Move",
+            "d_name":"Move",
+            "descriptions":[
+                {
+                    "conditions":[],
+                    "description":"Move through an exit"
+                }
+            ],
+            "i_name":"move",
             "kwargs":{}
         }
     },
     "actors":{
         "1":{
-            "actions":["testaction"],
+            "actions":[
+                "testaction",
+                "examine",
+                "move"
+            ],
             "class":"Player",
             "d_name":"Test Player",
             "descriptions":[
                 {
                     "conditions":[],
-                    "description":"test description here"
+                    "description":"Description of the player character"
                 }
             ],
             "flags":[],
             "i_name":"testactor",
-            "location":"testroom",
-            "stats":{}
+            "location":{
+                "id":2,
+                "table":"rooms"
+            },
+            "stats":{
+                "atk":5,
+                "def":2,
+                "hp":20
+            },
+            "table_name":"actors"
         },
         "2":{
             "d_name":"Giant Spider",
-            "i_name":"giantspider"
+            "descriptions":[
+                {
+                    "conditions":[],
+                    "description":"This is a giant spider"
+                }
+            ],
+            "i_name":"giantspider",
+            "location":{
+                "id":1,
+                "table":"rooms"
+            },
+            "stats":{
+                "atk":3,
+                "def":1,
+                "hp":10
+            }
         }
     },
     "items":{},
@@ -47,7 +101,7 @@
             "descriptions":[
                 {
                     "conditions":[],
-                    "description":"Test Description"
+                    "description":"Test Description of the Test Room"
                 }
             ],
             "exits":[
@@ -61,13 +115,40 @@
                     ],
                     "i_name":"testexit",
                     "leads_to":{
-                        "id":1,
+                        "id":2,
                         "table":"rooms"
                     },
                     "usable":[]
                 }
             ],
             "i_name":"testroom"
+        },
+        "2":{
+            "d_name":"Second Room",
+            "descriptions":[
+                {
+                    "conditions":[],
+                    "description":"Test Description of the Second Room"
+                }
+            ],
+            "exits":[
+                {
+                    "d_name":"Second Exit",
+                    "descriptions":[
+                        {
+                            "conditions":[],
+                            "description":"Second Test Description"
+                        }
+                    ],
+                    "i_name":"secondexit",
+                    "leads_to":{
+                        "id":1,
+                        "table":"rooms"
+                    },
+                    "usable":[]
+                }
+            ],
+            "i_name":"secondroom"
         }
     }
 }

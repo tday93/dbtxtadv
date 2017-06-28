@@ -26,15 +26,15 @@ def cmdparse(raw_string, player):
 
 def match_actions(p_actions, action_name):
     for action in p_actions:
-        if any(action.i_name == action_name, action.d_name == action_name,
-               action_name in action.aliases):
+        if any([action.i_name == action_name, action.d_name == action_name,
+               action_name in action.aliases]):
             return action
 
 
 def get_possible_actions(player):
     p_actions = []
     for action_name in player.actions:
-        for action in player.game.actions:
+        for a_name, action in player.game.actions.items():
             if action.i_name == action_name and action.is_usable(player):
                 p_actions.append(action)
     return p_actions

@@ -12,8 +12,9 @@ class BaseObject(object):
 
     """
 
-    def __init__(self, game, table, id):
+    def __init__(self, game, table, id, table_name):
         self.game = game
+        self.table_name = table_name
         self.table = table
         self.id = id
         self.load_values()
@@ -29,8 +30,8 @@ class BaseObject(object):
         """
 
     @staticmethod
-    def get_object(game, table, id, item):
-        return BaseObject(game, table, id)
+    def get_object(game, table, id, item, table_name):
+        return BaseObject(game, table, id, table_name)
 
     def save_values(self):
 
@@ -65,7 +66,10 @@ class BaseObject(object):
         return all(hasattr(self, "stats"), "hp" in self.stats,
                    "def" in self.stats)
 
-    def has_exits(self, actor):
+    def is_damageable(self, actor=None):
+        return (hasattr(self, "stats") and "hp" in self.stats)
+
+    def has_exits(self, actor=None):
         return hasattr(self, "exits")
 
     def is_usable(self, actor):
@@ -75,22 +79,56 @@ class BaseObject(object):
         return hasattr(self, "do_action")
 
         # other helper methods
-    def describe(self, actorflags):
-        if self.is_describable():
-            desc_out = []
+    def describe(self, actor):
+        if self.is_describable(actor):
+            desc_txt = []
             for description in self.descriptions:
-                if misc_lib.check_conditions(self.get_flags(),
+                if misc_lib.check_conditions(actor.get_flags(),
                                              description["conditions"]):
-                    desc_out.append(description["description"])
-            return desc_out
+                    desc_txt.append(description["description"])
+            return self.format_description(desc_txt)
         else:
             return None
 
+    def format_description(self, desc_txt):
+        """ gets a list of description text,
+            returns this text in a readable format
+
+            base format is as follows:
+                [category] <name> :
+                    lines of
+                    descriptions
+        """
+        desc_block = "[{}] <{}>: \n".format(self.table_name, self.d_name)
+        for line in desc_txt:
+            desc_block = desc_block + "  {}\n".format(line)
+        return desc_block
+
+    def get_identifiers(self):
+        ids = [self.i_name, self.d_name]
+        if hasattr(self, "aliases"):
+            ids = ids + self.aliases
+        return ids
+
+    def get_loc_obj(self):
+        if not hasattr(self, "location"):
+            return None
+        loc_obj = getattr(self.game,
+                          self.location["table"])[self.location["id"]]
+        return loc_obj
+
     def get_flags(self):
-        if hasattr(self, "location"):
-            loc_obj = getattr(self.game,
-                              self.location["table"])[self.location["id"]]
-            loc_flags = loc_obj.get_flags()
-            return self.flags + loc_flags
-        else:
-            return self.flags
+        all_flags = []
+        loc_obj = self.get_loc_obj()
+        if hasattr(self, "flags"):
+            all_flags = self.flags
+        if loc_obj:
+            all_flags = all_flags + loc_obj.get_flags()
+        return all_flags
+
+    def get_exits(self):
+        if self.has_exits():
+            return self.exits
+
+    def get_reference_dict(self):
+        return {"table": self.table_name, "id": self.id}
