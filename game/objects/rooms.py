@@ -10,6 +10,7 @@ class Room(BaseObject):
 
     def __init__(self, game, table, id, table_name):
         super().__init__(game, table, id, table_name)
+        self.category = "Room"
 
     @staticmethod
     def get_object(game, table, id, item, table_name):

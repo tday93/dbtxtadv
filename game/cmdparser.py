@@ -32,9 +32,7 @@ def match_actions(p_actions, action_name):
 
 
 def get_possible_actions(player):
-    p_actions = []
-    for action_name in player.actions:
-        for a_name, action in player.game.actions.items():
-            if action.i_name == action_name and action.is_usable(player):
-                p_actions.append(action)
-    return p_actions
+    p_actions = player.get_actions()
+    p_a_obj = [action for a_name, action in player.game.actions.items()
+               if action.i_name in p_actions and action.is_usable(player)]
+    return p_a_obj

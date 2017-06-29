@@ -21,10 +21,13 @@ def get_in_scope(actor):
 
     obj_in_scope = [container]
     for i_id, item in items.items():
-        if item.location == a_loc or item.location == a_as_loc:
+        if (item.has_location() and (item.location == a_loc
+                                     or item.location == a_as_loc)):
             obj_in_scope.append(item)
     for a_id, other_actor in actors.items():
-        if other_actor.location == a_loc or actor.location == a_as_loc:
+        if (other_actor.has_location()
+                and (other_actor.location == a_loc
+                     or actor.location == a_as_loc)):
             obj_in_scope.append(other_actor)
     for ac_id, action in actions.items():
         if action.i_name in actor.actions:

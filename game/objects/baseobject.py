@@ -21,12 +21,18 @@ class BaseObject(object):
 
         """
         fields:
+            MANDATORY:
             i_name
             d_name
             Class
-            descriptions
-            flags
+
+            OPTIONAL:
+            descriptions = list of dicts of form:
+                {"conditions":[], "description":""}
+            flags = list of strings
             location = {"table": tablename, "id": id}
+            inventory = list of item table refs
+            actions = list of action i_names
         """
 
     @staticmethod
@@ -69,8 +75,17 @@ class BaseObject(object):
     def is_damageable(self, actor=None):
         return (hasattr(self, "stats") and "hp" in self.stats)
 
+    def has_location(self):
+        return hasattr(self, "location")
+
     def has_exits(self, actor=None):
         return hasattr(self, "exits")
+
+    def has_inventory(self):
+        return hasattr(self, "inventory")
+
+    def has_actions(self):
+        return hasattr(self, "actions")
 
     def is_usable(self, actor):
         """ whether or not this can be passed to 'use_action'
@@ -99,7 +114,11 @@ class BaseObject(object):
                     lines of
                     descriptions
         """
-        desc_block = "[{}] <{}>: \n".format(self.table_name, self.d_name)
+        if hasattr(self, "category"):
+            category = self.category
+        else:
+            category = self.table_name
+        desc_block = "[{}] <{}>: \n".format(category, self.d_name)
         for line in desc_txt:
             desc_block = desc_block + "  {}\n".format(line)
         return desc_block
@@ -132,3 +151,18 @@ class BaseObject(object):
 
     def get_reference_dict(self):
         return {"table": self.table_name, "id": self.id}
+
+    def get_items(self):
+        items = []
+        for item in self.inventory:
+            items.append(self.game.get_game_object(item))
+        return items
+
+    def get_actions(self):
+        actions = self.actions
+        if self.has_inventory():
+            i_with_actions = [item for item in self.get_items()
+                              if item.has_actions()]
+            for item in i_with_actions:
+                actions = actions + item.get_actions()
+        return actions

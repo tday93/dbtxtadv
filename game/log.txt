@@ -189,3 +189,59 @@
 [34m[D 170628 13:18:53 game:55][m obj = secondroom type =Room
 [34m[D 170628 13:18:53 game:55][m obj = testactor type =Player
 [34m[D 170628 13:18:53 game:55][m obj = giantspider type =Actor
+[32m[I 170629 11:22:11 main:21][m hello world
+[32m[I 170629 11:22:11 main:22][m Namespace(flag=False, name=None, verbose=0)
+[34m[D 170629 11:22:11 game:56][m obj = testroom type =Room
+[34m[D 170629 11:22:11 game:56][m obj = secondroom type =Room
+[34m[D 170629 11:22:11 game:56][m obj = testactor type =Player
+[34m[D 170629 11:22:11 game:56][m obj = giantspider type =Actor
+[34m[D 170629 11:22:11 game:56][m obj = testitem type =BaseObject
+[32m[I 170629 11:22:41 main:21][m hello world
+[32m[I 170629 11:22:41 main:22][m Namespace(flag=False, name=None, verbose=0)
+[34m[D 170629 11:22:41 game:56][m obj = testroom type =Room
+[34m[D 170629 11:22:41 game:56][m obj = secondroom type =Room
+[34m[D 170629 11:22:41 game:56][m obj = testactor type =Player
+[34m[D 170629 11:22:41 game:56][m obj = giantspider type =Actor
+[34m[D 170629 11:22:41 game:56][m obj = testitem type =Item
+[32m[I 170629 11:23:30 main:21][m hello world
+[32m[I 170629 11:23:30 main:22][m Namespace(flag=False, name=None, verbose=0)
+[34m[D 170629 11:23:30 game:56][m obj = testroom type =Room
+[34m[D 170629 11:23:30 game:56][m obj = secondroom type =Room
+[34m[D 170629 11:23:30 game:56][m obj = testactor type =Player
+[34m[D 170629 11:23:30 game:56][m obj = giantspider type =Actor
+[34m[D 170629 11:23:30 game:56][m obj = testitem type =Item
+[32m[I 170629 11:25:07 main:21][m hello world
+[32m[I 170629 11:25:07 main:22][m Namespace(flag=False, name=None, verbose=0)
+[34m[D 170629 11:25:07 game:56][m obj = testroom type =Room
+[34m[D 170629 11:25:07 game:56][m obj = secondroom type =Room
+[34m[D 170629 11:25:07 game:56][m obj = testactor type =Player
+[34m[D 170629 11:25:07 game:56][m obj = giantspider type =Actor
+[34m[D 170629 11:25:07 game:56][m obj = testitem type =Item
+[32m[I 170629 11:29:21 main:21][m hello world
+[32m[I 170629 11:29:21 main:22][m Namespace(flag=False, name=None, verbose=0)
+[34m[D 170629 11:29:21 game:56][m obj = testroom type =Room
+[34m[D 170629 11:29:21 game:56][m obj = secondroom type =Room
+[34m[D 170629 11:29:21 game:56][m obj = testactor type =Player
+[34m[D 170629 11:29:21 game:56][m obj = giantspider type =Actor
+[34m[D 170629 11:29:21 game:56][m obj = testitem type =Item
+[32m[I 170629 11:36:51 main:21][m hello world
+[32m[I 170629 11:36:51 main:22][m Namespace(flag=False, name=None, verbose=0)
+[34m[D 170629 11:36:51 game:56][m obj = testroom type =Room
+[34m[D 170629 11:36:51 game:56][m obj = secondroom type =Room
+[34m[D 170629 11:36:51 game:56][m obj = testactor type =Player
+[34m[D 170629 11:36:51 game:56][m obj = giantspider type =Actor
+[34m[D 170629 11:36:51 game:56][m obj = testitem type =Item
+[32m[I 170629 11:41:09 main:21][m hello world
+[32m[I 170629 11:41:09 main:22][m Namespace(flag=False, name=None, verbose=0)
+[34m[D 170629 11:41:09 game:56][m obj = testroom type =Room
+[34m[D 170629 11:41:09 game:56][m obj = secondroom type =Room
+[34m[D 170629 11:41:09 game:56][m obj = testactor type =Player
+[34m[D 170629 11:41:09 game:56][m obj = giantspider type =Actor
+[34m[D 170629 11:41:09 game:56][m obj = testitem type =Item
+[32m[I 170629 11:41:56 main:21][m hello world
+[32m[I 170629 11:41:56 main:22][m Namespace(flag=False, name=None, verbose=0)
+[34m[D 170629 11:41:56 game:56][m obj = testroom type =Room
+[34m[D 170629 11:41:56 game:56][m obj = secondroom type =Room
+[34m[D 170629 11:41:56 game:56][m obj = testactor type =Player
+[34m[D 170629 11:41:56 game:56][m obj = giantspider type =Actor
+[34m[D 170629 11:41:56 game:56][m obj = testitem type =Item

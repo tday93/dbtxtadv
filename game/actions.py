@@ -12,6 +12,7 @@ class Action(BaseObject):
 
     def __init__(self, game, table, id, table_name):
         super().__init__(game, table, id, table_name)
+        self.category = "Action"
 
     def do_action(self, actor, **kw):
         self.pre_action(actor, **kw)

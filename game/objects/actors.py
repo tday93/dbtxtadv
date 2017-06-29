@@ -9,6 +9,7 @@ class Actor(BaseObject):
 
     def __init__(self, game, table, id, table_name):
         super().__init__(game, table, id, table_name)
+        self.category = "Actor"
 
     def use_action(self, action, **kw):
         if action.is_usable():

@@ -2,6 +2,7 @@
 from objects.baseobject import BaseObject
 from objects.actors import Actor
 from objects.rooms import Room
+from objects.items import Item
 from actions import Action
 from data.gamedb import GameDB
 import misc_lib
@@ -17,7 +18,7 @@ class Game(object):
         # initialize objects
         self.rooms = self.load_rooms(self.gdb.rooms, "rooms")
         self.actors = self.load_actors(self.gdb.actors, "actors")
-        self.items = self.load_simple(self.gdb.items, "items")
+        self.items = self.load_items(self.gdb.items, "items")
         # load actions
         self.actions = self.load_actions(self.gdb.actions, "actions")
         # initialize player
@@ -64,6 +65,9 @@ class Game(object):
 
     def load_actors(self, table, table_name):
         return self.load_objects(table, Actor, table_name)
+
+    def load_items(self, table, table_name):
+        return self.load_objects(table, Item, table_name)
 
     def load_actions(self, table, table_name):
         built_actions = {}

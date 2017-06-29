@@ -94,10 +94,26 @@
             }
         }
     },
-    "items":{},
+    "items":{
+        "1":{
+            "aliases":[],
+            "class":"TestItem",
+            "d_name":"The Test Item",
+            "descriptions":[
+                {
+                    "conditions":[],
+                    "description":"The Test Item Description"
+                }
+            ],
+            "i_name":"testitem",
+            "actions":"testaction",
+            "location":{"table":"actors", "id":1}
+        }
+    },
     "rooms":{
         "1":{
             "d_name":"Test Room",
+            "aliases":["room"],
             "descriptions":[
                 {
                     "conditions":[],
@@ -125,6 +141,7 @@
         },
         "2":{
             "d_name":"Second Room",
+            "aliases":["room"],
             "descriptions":[
                 {
                     "conditions":[],
