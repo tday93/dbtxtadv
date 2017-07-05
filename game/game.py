@@ -15,36 +15,43 @@ class Game(object):
         # initialize database
         self.logger = logger
         self.gdb = GameDB(dbpath)
+        self.player_characters = {}
         # initialize objects
         self.rooms = self.load_rooms(self.gdb.rooms, "rooms")
         self.actors = self.load_actors(self.gdb.actors, "actors")
         self.items = self.load_items(self.gdb.items, "items")
         # load actions
         self.actions = self.load_actions(self.gdb.actions, "actions")
-        # initialize player
         # start game loop
         self.ui = None
+        self.message_queue = []
 
     async def test_loop(self):
         while True:
             player_input = input("What do?")
-            await self.player_input(player_input)
+            input_pkg = {"player_id": 1, "player_input": player_input}
+            await self.player_input(input_pkg)
 
-    async def player_input(self, player_input):
+    def player_input(self, input_pkg):
         """ called when a player inputs text into game """
+        player = self.player_characters[input_pkg["player_id"]]
+        player_input = input_pkg["player_input"]
         player_action, split_string = cmdparser.cmdparse(player_input,
-                                                         self.pc)
-        scope = misc_lib.get_in_scope(self.pc)
-        player_action.do_action(self.pc, split_string=split_string,
+                                                         player)
+        scope = misc_lib.get_in_scope(player)
+        player_action.do_action(player, split_string=split_string,
                                 raw_text=player_input, scope=scope)
+        self.player_ouput("TEST MESSAGE PLEASE IGNORE")
+        reply = self.message_queue
+        self.message_queue = []
+        return reply
 
-    def player_output(self, player_output_list):
-        """ outputs text to the player """
-        for item in player_output_list:
-            print(item)
+    def player_ouput(self, output_text):
+        # adds a message to the queue to be sent to the player
+        self.message_queue.append(output_text)
 
     def register_player(self, player_obj):
-        self.pc = player_obj
+        self.player_characters[player_obj.id] = player_obj
 
     def load_objects(self, table, obj_class, table_name):
         built_objects = {}

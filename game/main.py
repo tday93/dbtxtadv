@@ -11,6 +11,7 @@ import argparse
 from game import Game
 from logger import setup_logger
 import asyncio
+from nethandler import GameServer
 
 
 logger = setup_logger(logfile="log.txt")
@@ -21,8 +22,19 @@ def main(args):
     logger.info("hello world")
     logger.info(args)
     loop = asyncio.get_event_loop()
-    g = Game("data/db.json", logger)
-    loop.run_until_complete(g.test_loop())
+    game = Game("data/db.json", logger)
+    coro = loop.create_server(lambda: GameServer(game), '127.0.0.1', 8888)
+    server = loop.run_until_complete(coro)
+
+    print("Serving on {}".format(server.sockets[0].getsockname()))
+    try:
+        loop.run_forever()
+    except KeyboardInterrupt:
+        pass
+
+    server.close()
+    loop.run_until_complete(server.wait_closed())
+    loop.close()
 
 
 if __name__ == "__main__":

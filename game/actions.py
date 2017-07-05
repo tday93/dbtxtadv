@@ -15,9 +15,18 @@ class Action(BaseObject):
         self.category = "Action"
 
     def do_action(self, actor, **kw):
-        self.pre_action(actor, **kw)
-        self.run_action(actor, **kw)
-        self.post_action(actor, **kw)
+        response = []
+        pre = self.pre_action(actor, **kw)
+        act = self.run_action(actor, **kw)
+        post = self.post_action(actor, **kw)
+        if pre:
+            response = response + pre
+        if act:
+            response = response + act
+        if post:
+            response = response + post
+        print(response)
+        self.game.player_ouput(response)
 
     def pre_action(self, actor, **kw):
         """ called before the action is performed"""
@@ -47,7 +56,7 @@ class TestAction(Action):
         super().__init__(game, table, id, table_name)
 
     def run_action(self, actor, **kw):
-        actor.game.player_output(" ".join(kw["split_string"]))
+        return " ".join(kw["split_string"])
 
 
 class Examine(Action):
@@ -65,7 +74,7 @@ class Examine(Action):
         for obj in matching_obj_in_scope:
             if obj.is_describable(actor):
                 descriptions.append(obj.describe(actor))
-        self.game.player_output(descriptions)
+        return descriptions
 
 
 class Move(Action):
@@ -84,7 +93,7 @@ class Move(Action):
     def post_action(self, actor, **kw):
         new_room = actor.get_loc_obj()
         room_desc = new_room.describe(actor)
-        self.game.player_output([room_desc])
+        return [room_desc]
 
 
 class Attack(Action):

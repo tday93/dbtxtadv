@@ -53,6 +53,7 @@
                 "examine",
                 "move"
             ],
+            "category":"Actor",
             "class":"Player",
             "d_name":"Test Player",
             "descriptions":[
@@ -96,6 +97,7 @@
     },
     "items":{
         "1":{
+            "actions":"testaction",
             "aliases":[],
             "class":"TestItem",
             "d_name":"The Test Item",
@@ -106,14 +108,18 @@
                 }
             ],
             "i_name":"testitem",
-            "actions":"testaction",
-            "location":{"table":"actors", "id":1}
+            "location":{
+                "id":1,
+                "table":"actors"
+            }
         }
     },
     "rooms":{
         "1":{
+            "aliases":[
+                "room"
+            ],
             "d_name":"Test Room",
-            "aliases":["room"],
             "descriptions":[
                 {
                     "conditions":[],
@@ -140,8 +146,10 @@
             "i_name":"testroom"
         },
         "2":{
+            "aliases":[
+                "room"
+            ],
             "d_name":"Second Room",
-            "aliases":["room"],
             "descriptions":[
                 {
                     "conditions":[],

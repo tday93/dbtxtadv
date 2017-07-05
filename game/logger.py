@@ -43,7 +43,7 @@ else:
     basestring_type = basestring  # noqa
 
 
-def setup_logger(name=__name__, logfile=None, level=logging.DEBUG):
+def setup_logger(name=__name__, logfile=None, level=logging.ERROR):
     """
     A utility function that you can call to easily set up logging to the
     console and optionally to a file. No hassles.
