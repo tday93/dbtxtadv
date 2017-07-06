@@ -16,5 +16,4 @@ class GameServer(asyncio.Protocol):
     def data_received(self, data):
         message = json.loads(data)
         reply = json.dumps(self.game.player_input(message))
-
         self.transport.write(reply.encode())

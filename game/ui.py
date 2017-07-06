@@ -67,9 +67,13 @@ class ListView(urwid.ListBox):
         self.max_size = max_size
 
     def add(self, line):
+        was_on_end = self.get_focus()[1] == len(self.body)-1
         if self.max_size and len(self.body) > self.max_size:
             del self.body[0]
         self.body.append(urwid.Text(line))
+        last = len(self.body)-1
+        if was_on_end:
+            self.set_focus(last, 'above')
 
 
 class Input(urwid.Edit):

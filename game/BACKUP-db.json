@@ -86,10 +86,6 @@
                 {
                     "id":1,
                     "table":"items"
-                },
-                {
-                    "id":2,
-                    "table":"items"
                 }
             ],
             "class":"Player",
@@ -103,7 +99,7 @@
             "flags":[],
             "i_name":"testactor",
             "location":{
-                "id":1,
+                "id":2,
                 "table":"rooms"
             },
             "stats":{
@@ -161,7 +157,6 @@
         "2":{
             "aliases":[],
             "category":"Item",
-            "children":[],
             "class":"DummyItem",
             "d_name":"The Dummy Item",
             "descriptions":[
@@ -173,7 +168,7 @@
             "i_name":"dummyitem",
             "location":{
                 "id":1,
-                "table":"actors"
+                "table":"rooms"
             },
             "table_name":"items"
         }
@@ -183,14 +178,13 @@
             "aliases":[
                 "room"
             ],
-            "category":"Room",
             "children":[
                 {
-                    "id":2,
+                    "id":1,
                     "table":"actors"
                 },
                 {
-                    "id":1,
+                    "id":2,
                     "table":"actors"
                 }
             ],
@@ -218,14 +212,12 @@
                     "usable":[]
                 }
             ],
-            "i_name":"testroom",
-            "table_name":"rooms"
+            "i_name":"testroom"
         },
         "2":{
             "aliases":[
                 "room"
             ],
-            "category":"Room",
             "children":[
                 {
                     "id":2,
@@ -256,8 +248,7 @@
                     "usable":[]
                 }
             ],
-            "i_name":"secondroom",
-            "table_name":"rooms"
+            "i_name":"secondroom"
         }
     }
 }

@@ -17,3 +17,7 @@ class Item(BaseObject):
     @staticmethod
     def get_object(game, table, id, item_dict, table_name):
         return Item(game, table, id, table_name)
+
+    def is_gettable(self, actor):
+        # items by default can be got by actors
+        return True

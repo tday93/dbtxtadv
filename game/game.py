@@ -41,7 +41,6 @@ class Game(object):
         scope = misc_lib.get_in_scope(player)
         player_action.do_action(player, split_string=split_string,
                                 raw_text=player_input, scope=scope)
-        self.player_ouput("TEST MESSAGE PLEASE IGNORE")
         reply = self.message_queue
         self.message_queue = []
         return reply

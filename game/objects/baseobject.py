@@ -16,6 +16,7 @@ class BaseObject(object):
         self.game = game
         self.table_name = table_name
         self.table = table
+        self.children = []
         self.id = id
         self.load_values()
 
@@ -69,11 +70,18 @@ class BaseObject(object):
         return hasattr(self, "descriptions")
 
     def is_attackable(self, actor):
-        return all(hasattr(self, "stats"), "hp" in self.stats,
-                   "def" in self.stats)
+        return (hasattr(self, "stats") and "hp" in self.stats
+                and "def" in self.stats)
 
     def is_damageable(self, actor=None):
         return (hasattr(self, "stats") and "hp" in self.stats)
+
+    def is_gettable(self, actor=None):
+        # returns true if this object can be held by an actor
+        return False
+
+    def has_flags(self):
+        return hasattr(self, "flags")
 
     def has_location(self):
         return hasattr(self, "location")
@@ -81,8 +89,15 @@ class BaseObject(object):
     def has_exits(self, actor=None):
         return hasattr(self, "exits")
 
-    def has_inventory(self):
-        return hasattr(self, "inventory")
+    def has_children(self):
+        return (hasattr(self, "children") and len(self.get_children()) > 0)
+
+    def is_lootable(self, actor):
+        if self.has_children():
+            if self.has_flags():
+                if "lootable" in self.flags:
+                    return True
+        return False
 
     def has_actions(self):
         return hasattr(self, "actions")
@@ -127,6 +142,8 @@ class BaseObject(object):
         ids = [self.i_name, self.d_name]
         if hasattr(self, "aliases"):
             ids = ids + self.aliases
+        if hasattr(self, "category"):
+            ids = ids + [self.category]
         return ids
 
     def get_loc_obj(self):
@@ -149,20 +166,23 @@ class BaseObject(object):
         if self.has_exits():
             return self.exits
 
-    def get_reference_dict(self):
+    def get_ref_dict(self):
         return {"table": self.table_name, "id": self.id}
 
-    def get_items(self):
-        items = []
-        for item in self.inventory:
-            items.append(self.game.get_game_object(item))
-        return items
+    def get_children(self):
+        # returns all child objects
+        child_objs = []
+        for child_ref in self.children:
+            child_objs.append(self.game.get_game_object(child_ref))
+        return child_objs
 
     def get_actions(self):
+        if not self.has_actions():
+            return []
         actions = self.actions
-        if self.has_inventory():
-            i_with_actions = [item for item in self.get_items()
-                              if item.has_actions()]
-            for item in i_with_actions:
-                actions = actions + item.get_actions()
+        if self.has_children():
+            child_objs = self.get_children()
+            for child in child_objs:
+                if child.has_actions():
+                    actions = actions + child.get_actions()
         return actions
