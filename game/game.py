@@ -36,11 +36,18 @@ class Game(object):
         """ called when a player inputs text into game """
         player = self.player_characters[input_pkg["player_id"]]
         player_input = input_pkg["player_input"]
-        player_action, split_string = cmdparser.cmdparse(player_input,
-                                                         player)
         scope = misc_lib.get_in_scope(player)
-        player_action.do_action(player, split_string=split_string,
-                                raw_text=player_input, scope=scope)
+        try:
+            parser_out = cmdparser.cmdparse(player_input, player, scope)
+            player_action = parser_out["action"]
+            split_string = parser_out["split_string"]
+
+            player_action.do_action(player, split_string=split_string,
+                                    raw_text=player_input, scope=scope)
+        except Exception as e:
+            self.logger.error("Error:", exc_info=e)
+            self.player_ouput("Something went wrong")
+
         reply = self.message_queue
         self.message_queue = []
         return reply

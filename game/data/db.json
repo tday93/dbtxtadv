@@ -9,6 +9,9 @@
         "1":{
             "aliases":[],
             "class":"TestAction",
+            "cmd_pat":[
+                "ALL"
+            ],
             "d_name":"The Test Action",
             "descriptions":[
                 {
@@ -35,6 +38,9 @@
         "3":{
             "aliases":[],
             "class":"Move",
+            "cmd_pat":[
+                "TARGET"
+            ],
             "d_name":"Move",
             "descriptions":[
                 {
@@ -70,6 +76,32 @@
             ],
             "i_name":"get",
             "kwargs":{}
+        },
+        "6":{
+            "aliases":[],
+            "class":"Take",
+            "d_name":"Take",
+            "descriptions":[
+                {
+                    "conditions":[],
+                    "description":"Take something from something else"
+                }
+            ],
+            "i_name":"take",
+            "kwargs":{}
+        },
+        "7":{
+            "aliases":[],
+            "class":"Inspect",
+            "d_name":"Inspect",
+            "descriptions":[
+                {
+                    "conditions":[],
+                    "description":"Inspect something's contents"
+                }
+            ],
+            "i_name":"inspect",
+            "kwargs":{}
         }
     },
     "actors":{
@@ -79,7 +111,9 @@
                 "examine",
                 "move",
                 "attack",
-                "get"
+                "get",
+                "take",
+                "inspect"
             ],
             "category":"Actor",
             "children":[
@@ -118,12 +152,17 @@
                 "spider"
             ],
             "category":"Actor",
+            "children":[],
             "d_name":"Giant Spider",
             "descriptions":[
                 {
                     "conditions":[],
                     "description":"This is a giant spider"
                 }
+            ],
+            "flags":[
+                "lootable",
+                "dead"
             ],
             "i_name":"giantspider",
             "location":{
@@ -133,7 +172,7 @@
             "stats":{
                 "atk":3,
                 "def":1,
-                "hp":20
+                "hp":-2
             },
             "table_name":"actors"
         }
@@ -170,6 +209,7 @@
                     "description":"The Dummy Item Description"
                 }
             ],
+            "flags":[],
             "i_name":"dummyitem",
             "location":{
                 "id":1,
@@ -203,6 +243,7 @@
             ],
             "exits":[
                 {
+                    "aliases":"exit",
                     "d_name":" Test Exit",
                     "descriptions":[
                         {
@@ -218,6 +259,7 @@
                     "usable":[]
                 }
             ],
+            "flags":[],
             "i_name":"testroom",
             "table_name":"rooms"
         },
@@ -241,6 +283,7 @@
             ],
             "exits":[
                 {
+                    "aliases":"exit",
                     "d_name":"Second Exit",
                     "descriptions":[
                         {
@@ -256,6 +299,7 @@
                     "usable":[]
                 }
             ],
+            "flags":[],
             "i_name":"secondroom",
             "table_name":"rooms"
         }

@@ -13,6 +13,7 @@ class BaseObject(object):
     """
 
     def __init__(self, game, table, id, table_name):
+        self.flags = []
         self.game = game
         self.table_name = table_name
         self.table = table
@@ -66,12 +67,19 @@ class BaseObject(object):
 
     # convenience methods for checking things, all return booleans
 
+    def is_dead(self):
+        return "dead" in self.flags
+
     def is_describable(self, actor):
         return hasattr(self, "descriptions")
 
     def is_attackable(self, actor):
         return (hasattr(self, "stats") and "hp" in self.stats
                 and "def" in self.stats)
+
+    def is_inspectable(self, actor):
+        return (hasattr(self, "children") and (not hasattr(self, "flags")
+                                               or "lootable" in self.flags))
 
     def is_damageable(self, actor=None):
         return (hasattr(self, "stats") and "hp" in self.stats)
@@ -186,3 +194,8 @@ class BaseObject(object):
                 if child.has_actions():
                     actions = actions + child.get_actions()
         return actions
+
+    def get_action_objs(self):
+        action_names = self.get_actions()
+        return [action for k, action in self.game.actions.items()
+                if action.i_name in action_names]

@@ -245,3 +245,30 @@
 [34m[D 170629 11:41:56 game:56][m obj = testactor type =Player
 [34m[D 170629 11:41:56 game:56][m obj = giantspider type =Actor
 [34m[D 170629 11:41:56 game:56][m obj = testitem type =Item
+[31m[E 170707 13:04:17 game:48][m Error:
+    Traceback (most recent call last):
+      File "/home/tday/projects/games/dbtxtadv/game/game.py", line 46, in player_input
+        raw_text=player_input, scope=scope)
+      File "/home/tday/projects/games/dbtxtadv/game/actions.py", line 20, in do_action
+        act = self.run_action(actor, **kw)
+      File "/home/tday/projects/games/dbtxtadv/game/actions.py", line 73, in run_action
+        obj_name = kw["split_string"][1]
+    IndexError: list index out of range
+[31m[E 170707 13:18:52 game:48][m Error:
+    Traceback (most recent call last):
+      File "/home/tday/projects/games/dbtxtadv/game/game.py", line 46, in player_input
+        raw_text=player_input, scope=scope)
+      File "/home/tday/projects/games/dbtxtadv/game/actions.py", line 20, in do_action
+        act = self.run_action(actor, **kw)
+      File "/home/tday/projects/games/dbtxtadv/game/actions.py", line 193, in run_action
+        t_obj = get_from_name(target_name)
+    TypeError: get_from_name() missing 1 required positional argument: 'obj_name'
+[31m[E 170707 13:20:05 game:48][m Error:
+    Traceback (most recent call last):
+      File "/home/tday/projects/games/dbtxtadv/game/game.py", line 46, in player_input
+        raw_text=player_input, scope=scope)
+      File "/home/tday/projects/games/dbtxtadv/game/actions.py", line 20, in do_action
+        act = self.run_action(actor, **kw)
+      File "/home/tday/projects/games/dbtxtadv/game/actions.py", line 194, in run_action
+        if not t_obj.is_lootable(actor):
+    AttributeError: 'list' object has no attribute 'is_lootable'

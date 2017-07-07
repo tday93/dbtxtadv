@@ -51,6 +51,10 @@ class Action(BaseObject):
             return Attack(game, table, id, table_name)
         elif action_dict["class"] == "Get":
             return Get(game, table, id, table_name)
+        elif action_dict["class"] == "Take":
+            return Take(game, table, id, table_name)
+        elif action_dict["class"] == "Inspect":
+            return Inspect(game, table, id, table_name)
 
 
 class TestAction(Action):
@@ -80,6 +84,27 @@ class Examine(Action):
         return descriptions
 
 
+class Inspect(Action):
+
+    """
+        returns descriptions of a targets child objects
+
+    """
+
+    def __init__(self, game, table, id, table_name):
+        super().__init__(game, table, id, table_name)
+
+    def run_action(self, actor, **kw):
+        t_name = kw["split_string"][1]
+        target = get_from_name(actor, t_name)[0]
+        if not target.is_inspectable(actor):
+            return ["You cannot inspect that"]
+        descriptions = []
+        for obj in target.get_children():
+            descriptions.append(obj.describe(actor))
+        return descriptions
+
+
 class Move(Action):
 
     def __init__(self, game, table, id, table_name):
@@ -89,7 +114,8 @@ class Move(Action):
         t_e_name = kw["split_string"][1]
         exits = actor.get_loc_obj().get_exits()
         for exit in exits:
-            if t_e_name == exit["i_name"] or t_e_name == exit["d_name"]:
+            if (t_e_name == exit["i_name"] or t_e_name == exit["d_name"]
+                    or t_e_name in exit["aliases"]):
                 if check_conditions(actor.get_flags(), exit["usable"]):
                     transforms.move(
                         actor, self.game.get_game_object(exit["leads_to"]))
@@ -124,6 +150,9 @@ class Attack(Action):
         target = get_from_name(actor, kw["split_string"][1])[0]
         if target.is_attackable(actor):
             if target.stats["hp"] <= 0:
+                target.flags.append("lootable")
+                target.flags.append("dead")
+                target.save_values()
                 return ["\n You killed the {}".format(target.d_name)]
 
 
@@ -168,3 +197,27 @@ class Get(Action):
     def post_action(self, actor, item_obj, **kw):
         # report success maybe? might not be needed
         pass
+
+
+class Take(Action):
+
+    """
+        takes an item from some other game object and gives it to
+        the taking actor
+
+    """
+
+    def __init__(self, game, table, id, table_name):
+        super().__init__(game, table, id, table_name)
+
+    def run_action(self, actor, **kw):
+        item_name = kw["split_string"][1]
+        target_name = kw["split_string"][3]
+        t_obj = get_from_name(actor, target_name)[0]
+        if not t_obj.is_lootable(actor):
+            return ["You cannot take from this {}".format(t_obj.d_name)]
+        for child in t_obj.get_children():
+            if item_name in child.get_identifiers():
+                transforms.move(child, actor)
+                return ["You took the {} from the {}".format(child.d_name,
+                                                             t_obj.d_name)]

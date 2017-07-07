@@ -1,12 +1,5 @@
-REWORK ITEM REFERENCES
-  CHILD CARRIES PARENT IN "location"
-  PARENT CARRIES CHILDREN IN "children"
-
-  item ref = {"table": <tablename", "id": <id in table>}
-
 actions
   rework maybe? or maybe not?
 
 NPC AI
 ITEMS
-k
